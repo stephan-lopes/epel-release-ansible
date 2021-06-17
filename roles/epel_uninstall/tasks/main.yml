@@ -1,0 +1,11 @@
+---
+- name: Desinstalar Epel Release
+  yum_repository:
+    name: epel
+    state: absent
+
+- name: Desinstalar EPEL GPG Key
+  rpm_key:
+    key: "{{ dir }}"
+    state: absent
+  notify: Remover local do arquivo GPG

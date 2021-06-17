@@ -1,0 +1,5 @@
+---
+- name: Remover local do arquivo GPG
+  file:
+    path: "{{ dir }}"
+    state: absent

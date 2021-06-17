@@ -1,0 +1,8 @@
+---
+- name: Desinstalação do Epel Release no Host Específicado
+  hosts: develop
+  become: yes
+  ignore_errors: yes
+  gather_facts: no
+  roles:
+    - epel_uninstall

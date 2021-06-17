@@ -1,0 +1,17 @@
+---
+- name: Instalar Epel Release
+  yum:
+    name: https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
+    state: present
+- name: Download do EPEL GPG Key
+  get_url:
+    url: https://dl.fedoraproject.org/pub/epel/RPM-GPG-KEY-EPEL-7
+    dest: /etc/pki/rpm-gpg/RPM-GPG-KEY-EPEL-7    
+- name: Instalar EPEL GPG Key
+  rpm_key:
+    key: /etc/pki/rpm-gpg/RPM-GPG-KEY-EPEL-7
+    state: present
+- name: Atualizar repositórios
+  yum:
+    update_cache: yes
+    state: latest

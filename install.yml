@@ -1,0 +1,6 @@
+---
+- name: Instalação do Epel Release no Host Específicado
+  hosts: develop
+  become: yes  
+  roles:
+    - epel_install
